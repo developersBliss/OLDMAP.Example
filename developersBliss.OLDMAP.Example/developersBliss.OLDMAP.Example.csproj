@@ -8,9 +8,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="developersBliss.OLDMAP" Version="1.0.2" />
-		<PackageReference Include="developersBliss.OLDMAP.Vendor.Kafka" Version="1.0.2" />
-		<PackageReference Include="developersBliss.OLDMAP.Vendor.PostgreSql" Version="1.0.2" />
+		<PackageReference Include="developersBliss.OLDMAP" Version="1.0.3" />
+		<PackageReference Include="developersBliss.OLDMAP.Vendor.Kafka" Version="1.0.3" />
+		<PackageReference Include="developersBliss.OLDMAP.Vendor.PostgreSql" Version="1.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
