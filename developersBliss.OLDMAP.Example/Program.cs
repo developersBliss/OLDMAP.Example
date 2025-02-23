@@ -6,11 +6,14 @@ using Microsoft.Extensions.Hosting;
 HostApplicationBuilder applicationBuilder = Host.CreateApplicationBuilder();
 applicationBuilder.Services
 	.AddOLDMAP()
-	.AddKafkaDomainMessaging()
+	.AddKafkaDomainMessageApplication()
+	.AddKafkaDomainEventApplication()
 	.AddPostgreSqlMartenAggregateRootStorage()
 	.TryAddPostgreSqlMartenAggregateRootStore<FooBar>()
 	.AddApplicationServiceWithPureStyle<FooBarService, FooBar>()
 	.AddTransient<MyApplicationClient>()
+	.AddDomainEventHandler<FooBarInitialized, MyEventHandler>()
+	.AddDomainEventHandler<FooBarIncremented, MyEventHandler>()
 ;
 IHost host = applicationBuilder.Build();
 var lifetime = host.Services.GetRequiredService<IHostApplicationLifetime>();
