@@ -14,17 +14,17 @@ public class MyApplicationClient(
 		PackedDomainMessage initializeMessage = domainMessagePacker.PackMessage(
 			domainMessageId: Guid.NewGuid().ToString("N"),
 			address: myFooBar,
-			message: new InitializeFooBar()
+			domainMessage: new InitializeFooBar()
 		);
 		PackedDomainMessage incrementMessage1 = domainMessagePacker.PackMessage(
 			domainMessageId: Guid.NewGuid().ToString("N"),
 			address: myFooBar,
-			message: new IncrementFooBar(Amount: 1)
+			domainMessage: new IncrementFooBar(Amount: 1)
 		);
 		PackedDomainMessage incrementMessage2 = domainMessagePacker.PackMessage(
 			domainMessageId: Guid.NewGuid().ToString("N"),
 			address: myFooBar,
-			message: new IncrementFooBar(Amount: 5)
+			domainMessage: new IncrementFooBar(Amount: 5)
 		);
 		await domainMessageSender.Send(initializeMessage);
 		await domainMessageSender.Send(incrementMessage1);
