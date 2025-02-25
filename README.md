@@ -2,9 +2,7 @@
 
 This demonstrates the usage of developersBliss.OLDMAP with a "foobar" application.
 
-So what does this platform do? Instead of designing your applications around database schemas and CRUD endpoints like you would with ASP.NET and Entity Framework, you break it down into lifecycles called Aggregate Roots. Each Aggregate Root processes Domain Messages and contains state. You supply the Aggregate Root definitions, and the platform takes care of the rest. This allows you to more accurately model your business logic (because business processes are stateful and lifecycle-driven) while also not having to worry about the complexities of distributed systems (because all of the infrastructure is handled for you).
-
-The platform provides the following guarantees:
+So what does this platform do? Instead of designing your applications around database schemas and CRUD endpoints like you would with ASP.NET and Entity Framework, you break it down into lifecycles called Aggregate Roots. Each Aggregate Root processes Domain Messages and contains state. You supply the Aggregate Root definitions, and the platform takes care of the rest. This allows you to more accurately model your business logic (because business processes are stateful and lifecycle-driven) while also not having to worry about the complexities of distributed systems (because all of the infrastructure is handled for you). The platform also provides the following guarantees:
 
 - [x] Exactly-Once Processing Guarantees
 - [x] Message Deduplication Guarantees
