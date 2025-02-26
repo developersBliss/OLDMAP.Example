@@ -1,17 +1,17 @@
 ﻿namespace developersBliss.OLDMAP.Example;
 public class FooBarService {
 	public async Task<(FooBar, FooBarInitialized)> InitializeFooBar(
-		InitializeFooBar message
+		InitializeFooBar domainMessage
 	) {
-		var (fooBar, result) = FooBar.InitializeFooBar(message);
-		return (fooBar, result);
+		var (fooBar, domainEvent) = FooBar.InitializeFooBar(domainMessage);
+		return (fooBar, domainEvent);
 	}
 
 	public async Task<(FooBar, FooBarIncremented)> IncrementFooBar(
 		FooBar fooBar,
-		IncrementFooBar message
+		IncrementFooBar domainMessage
 	) {
-		var result = fooBar.IncrementFooBar(message);
-		return (fooBar, result);
+		var domainEvent = fooBar.IncrementFooBar(domainMessage);
+		return (fooBar, domainEvent);
 	}
 }
