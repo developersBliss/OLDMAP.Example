@@ -1,11 +1,12 @@
 ﻿using developersBliss.OLDMAP.Messaging;
+using Microsoft.Extensions.Hosting;
 
 namespace developersBliss.OLDMAP.Example;
 public class MyApplicationClient(
 	IDomainMessageSender domainMessageSender,
 	DomainMessagePacker domainMessagePacker
-) {
-	public async Task Do() {
+) : BackgroundService {
+	protected override async Task ExecuteAsync(CancellationToken stoppingToken) {
 		AggregateRootAddress myFooBar = new() {
 			Domain = "MyApplication",
 			AggregateRoot = "FooBar",
